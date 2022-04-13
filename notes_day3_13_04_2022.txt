@@ -1,0 +1,162 @@
+{}
+
+* class Hello{}  
+* public static void main(String args[]){}
+* if(num>0){}
+* if(){} else if(){} else {}
+* switch(var) {case 1 :}
+
+
+ class Hello {
+public static void main(String args[]){
+   int num=10;
+   if(num>0){
+     System.out.println("Yes the num is greater than 0");
+   } // closing of if
+  }  // closing brace for main
+} // closing brace for class Hello  
+
+--------------------------------------------------------------------------------------------------------------
+
+// A single character can be treated as both string and a character
+  char ch='A';
+  String grade="A";
+  String data="Hello";
+  char ch="Hello";// We cannot write this
+  String code="E0001"; // alphanumeric value we will be taking String
+
+int marks=60;
+
+if marks>=80  A
+if marks>=70 and <80   B
+if marks>=60 and <70   C
+else D
+
+int marks=43;
+if(marks>=80){
+   System.out.println("A");
+}else if(marks>=70 && marks<80){
+   System.out.println("B");
+}else if(marks>=60 && marks<70){
+   System.out.println("C");
+}else{
+   System.out.println("D");
+ }
+--------------------------------------------------------------------------------
+   (relational operators should be used to get a boolean type) ? if the first part is true evaluate this part : 
+    if the first part is false evaluate this part;
+
+  int num1=1;
+  int num2=3;
+  int max=(num2>num1)?num2 : num1;
+  System.out.println(max);
+
+  int num1=1;
+  int num2=3;
+  int max=(num1>num2)?num1 : num2;
+  System.out.println(max);
+
+--------------------------------------------------------------------------------------------------
+
+  char grade;
+  int marks=45;
+  grade=(marks>=80)?'A':(marks>=70)?'B':'C';
+  System.out.println(grade);
+  
+---------------------------------------------------------------------------------------------------------------
+entry controlled loop
+3 things which we need to take care of whenever we are applying iterations:
+1) We should take a counter which will keep a count of iteration and it should be initialised with a value.
+  int ctr=0;
+2) We need to check whether counters value is fine to enter the loop. for that we give a condition along with
+   while
+  while(ctr<10){}
+3) We have to change the value of the counter so that after entering the loop it checks whether to be part of
+the loop or exit the loop
+  ctr++ or ctr=ctr+1
+
+
+while (<condition>) { 
+   <statements>; 
+} 
+
+
+
+package com.infosys.iteration;
+
+public class IterationDemo1 {
+
+	  public static void main(String args[]){
+		    int counter=1; // Step 1  // Initialisation is must otherwise we get compilation error
+		    while(counter<=10){  //Step2
+		     System.out.println(counter);
+		    counter++;     // Step3
+		    } // while loop ends
+		  }  // main method ends
+		}   // class ends
+
+
+
+---------------------------------------------------------------------------------------------------------------
+To create a package ===> Right click on the project folder ====> new ====> package
+We can give the package name.
+package can have subpackages also so if we are writing 
+com.infosys.iteration
+We say com is a package and infosys is a subpackage of com and iteration is a subpackage of infosys.
+
+If we want to use a class which is in different package , we have write the import statement.
+Example Scanner is a predefined class which is used for user input and which is in a predefined package called
+util and util is a subpackage of java. 
+---------------------------------------------------------------------------------------------------------------
+package com.infosys.iteration;
+public class IterationDemo2 {
+
+	  public static void main(String args[]){
+		    int counter=12; // Step 1  // Initialisation is must otherwise we get compilation error
+		    while(counter<=10){  //Step2
+		     System.out.println(counter);
+		    counter++;     // Step3
+		    } // while loop ends
+		  }  // main method ends
+		}   // class ends
+// In the above code the value of counter is 12 and while checking the condition , it is getting false. As
+it is false , it is not entering the loop. So no output is being shown.
+
+-------------------------------------------------------------------------------------------------------------
+package com.infosys.userinput;
+
+import java.util.Scanner;
+
+public class Input {
+
+	public static void main(String[] args) {
+	  //java.util.Scanner scan=new java.util.Scanner(System.in);// Fully Qualified name of aclass
+	  // which is written with the package name FQN
+       Scanner scan=new Scanner(System.in);
+       // The above line means Scanner is a class and scan is a reference variable
+       // of Scanner class which is holding the address of a newly created object. The object is created
+       // with the keyword new during the runtime 
+       // System.in is to represent the keyboard for data entry
+       int num;
+       System.out.println("Enter the number");
+       num=scan.nextInt(); // nextInt is a method of Scanner class which is helping us to take number as an input
+       String str;
+       System.out.println("Enter a string");
+       str=scan.next();  // This helps in taking a string as an input
+       float f;
+       System.out.println("Enter a float value");
+       f=scan.nextFloat();
+       char ch; // For accepting a character we dont have something like nextChar();
+       System.out.println("Enter a character");
+       String str2=scan.next();  // accept a String  
+       ch=str2.charAt(0); // charAt is a method of String class which takes position as an input and return a character
+       // at that position suppose we entered y so y will be considered as a String intially in line 25
+       System.out.println(num);
+	   System.out.println(str);
+	   System.out.println(f);
+	   System.out.println(ch);
+	}
+
+}
+
+   
