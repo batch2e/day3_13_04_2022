@@ -158,5 +158,312 @@ public class Input {
 	}
 
 }
+---------------------------------------------------------------------------------------------------------------
 
-   
+//Importing the Scanner class
+import java.util.Scanner;
+public class Customer {
+	public static void main(String[] args) {
+		// Create a Scanner object
+		Scanner sc = new Scanner(System.in);
+		int totalCost = 0;
+		char wantToAddFoodItem = 'Y';
+		int unitPrice = 10;
+		int quantity = 1;
+		while (wantToAddFoodItem == 'Y') {
+			totalCost = totalCost + (quantity * unitPrice);
+			System.out.println("Order placed successfully");
+			System.out.println("Total cost: " + totalCost);
+			System.out.println("Do you want to add more food items to your order? Y or N");
+			String input = sc.next(); // Accepting input from the customer
+            // Extracting first character from the input string
+			wantToAddFoodItem = input.charAt(0); 
+		}
+	}
+}
+----------------------------------------------------------------------------------------
+Enter numbers from user and perform the sum of the numbers entered until unless we enter N from user.
+If user enter Y it should again accept the number
+Testcase1:
+Enter the number
+1
+Do you want to continue?
+Y
+Enter the number
+2
+Dou you want to continue?
+N
+The sum is: 3
+
+Testcase2:
+Enter the number
+1
+Do you want to continue?
+N
+The sum is: 1
+
+class Exercise1 {
+
+  public static void main(String args[]) {
+
+  }
+}
+-------------------------------------------------------------------------------------------------------------
+exit controller loop 
+do { 
+   <statements>; 
+} while (<condition>); 
+
+
+
+package com.infosys.iteration;
+class DoWhile{
+  public static void main(String args[]){
+
+int counter=0;
+do{
+    System.out.println(counter);
+    counter++;
+  }while(counter<10);
+
+   }
+}
+// Do while loop executes once if the condition is false but that is not with the
+// while loop. While loop wont execute if while checking for the first time, the 
+// condition is false
+package com.infosys.iteration;
+class DoWhile1{
+  public static void main(String args[]){
+
+int counter=11;
+do{
+    System.out.println(counter);
+    counter++;
+  }while(counter<10);
+
+   }
+}
+
+------------------------------------------
+//Importing the Scanner class
+import java.util.Scanner;
+public class Customer1 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in); // Creating a Scanner object
+		int totalCost = 0;
+		char wantToAddFoodItem = 'N';
+		int unitPrice = 10;
+		int quantity = 1;
+		do {
+			totalCost = totalCost + (quantity * unitPrice);
+			System.out.println("Order placed successfully!");
+			System.out.println("Total cost: " + totalCost);
+			System.out.println("Do you want to add more food items to the order? Y or N");
+			String input = sc.next(); // Accepting input from the customer
+			// Extracting first character from the input string
+			wantToAddFoodItem = input.charAt(0);
+		} while (wantToAddFoodItem == 'Y');
+		System.out.println("Thank you for ordering the food! It will reach you shortly...");
+	}
+}
+
+   ------------------------------------------------------------------------------------------------------
+
+package com.infosys.iteration;
+//Importing the Scanner class
+import java.util.Scanner;
+public class Customer1 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in); // Creating a Scanner object
+		int totalCost = 0;
+		char wantToAddFoodItem;
+		int unitPrice = 10;
+		int quantity = 1;
+		do {
+			totalCost = totalCost + (quantity * unitPrice);
+			System.out.println("Order placed successfully!");
+			System.out.println("Total cost: " + totalCost);
+			System.out.println("Do you want to add more food items to the order? Y or N");
+			String input = sc.next(); // Accepting input from the customer
+			// Extracting first character from the input string
+			wantToAddFoodItem = input.charAt(0);
+		} while (wantToAddFoodItem == 'Y');
+		System.out.println("Thank you for ordering the food! It will reach you shortly...");
+	}
+}
+---------------------------------------------------------------------------------------------------------------
+for (<initialization>; <condition>; <increment/decrement>) { 
+     <statements>; 
+} 
+
+//Importing the Scanner class
+package com.infosys.iteration;
+import java.util.Scanner;
+public class Customer2 {
+	public static void main(String[] args) {
+		// Create a Scanner object
+		Scanner sc = new Scanner(System.in);
+		int totalCost = 0;
+		int unitPrice;
+		System.out.println("Enter the number of food items to be ordered");
+		int noFoodItemsToBeOrdered = sc.nextInt();
+		for (int counter = 1; counter <= noFoodItemsToBeOrdered; counter++) {
+			System.out.println("Enter the food item");
+			String foodItem = sc.next();
+			System.out.println("Enter the quantity");
+			int quantity = sc.nextInt();
+			System.out.println("Enter the unit price");
+			unitPrice=sc.nextInt();
+			System.out.println("You have ordered: " + foodItem);
+			totalCost += unitPrice * quantity;
+			System.out.println("Order placed successfully!");
+			
+		}
+		System.out.println("Total cost of the order: " + totalCost);
+	}
+}
+---------------------------------------------------------------------------------------------------------------
+Nested loop
+package com.infosys.iteration;
+class Numbers {
+	public static void main(String[] args) {
+		int rows = 10;
+		for (int i = 1; i <= rows; ++i) {
+			for (int j = 1; j <= i; ++j) {
+                // print displays the text without adding a new line
+				System.out.print(j + " "); 
+			}
+			System.out.println(""); // println displays the text along with a new line
+		}
+	}
+}
+1
+12
+123
+1234
+12345
+
+---------------------------------------------------------------------------------------------
+
+
+//Importing the Scanner class
+import java.util.Scanner;
+public class Customer3 {
+	public static void main(String[] args) {
+		// Create a Scanner object
+		Scanner sc = new Scanner(System.in);
+		int totalCost = 0;
+		int unitPrice = 10;
+		System.out.println("Enter the max amount you can pay");
+		int maxAmountCustomerCanPay = sc.nextInt();
+		System.out.println("Enter the number of food items to be ordered");
+		int noFoodItemsToBeOrdered = sc.nextInt();
+		for (int counter = 1; counter <= noFoodItemsToBeOrdered; counter++) {
+			System.out.println("Enter the food item");
+			String foodItem = sc.next();
+			System.out.println("Enter the quantity");
+			int quantity = sc.nextInt();
+			totalCost += unitPrice * quantity;
+			if (totalCost > maxAmountCustomerCanPay) {
+				System.out.println("Sorry! Total cost is crossing your max amount limit.");
+				break;
+			}
+			System.out.println("You have ordered: " + foodItem);
+			System.out.println("Order placed successfully");
+			System.out.println("Total cost of the order: " + totalCost);
+		}
+	}
+}
+-------------------------------------------------------------------------------------------------------
+//Importing the Scanner class
+import java.util.Scanner;
+public class Customer4 {
+	public static void main(String[] args) {
+		// Create a Scanner object
+		Scanner sc = new Scanner(System.in);
+		int totalCost = 0;
+		int unitPrice = 10;
+		System.out.println("Enter the number of food items to be ordered");
+		int noFoodItemsToBeOrdered = sc.nextInt();
+		for (int counter = 1; counter <= noFoodItemsToBeOrdered; counter++) {
+			if (counter == 3)
+				continue;
+			System.out.println("Enter the food item");
+			String foodItem = sc.next();
+			System.out.println("Enter the quantity");
+			int quantity = sc.nextInt();
+			System.out.println("You have ordered: " + foodItem);
+			System.out.println("You have successfully placed the order number: "+ counter);
+			totalCost += unitPrice * quantity;
+			System.out.println("Total cost of the order: " + totalCost);
+		}
+	}
+}
+// According to the code above dont enter the details for the third iteration and also dont display the total cost
+----------------------------------------------------------------------------------------------
+Accept 10 numbers from user if the user enters 0 the output shown will be the sum of numbers entered till 0
+
+Enter number 1
+1
+Enter number 2
+2
+Enter number 3
+3
+Enter number 4
+4
+Enter number 5
+5
+Enter number 6
+6
+Enter number 7
+7
+Enter number 8
+8
+Enter number 9
+9
+Enter number 10
+10
+The sum is: 55
+------------------------------
+Enter number 1
+1
+Enter number 2
+32
+Enter number 3
+0
+The sum is: 33
+-------------------------------
+[Hint is break]
+-------------------------------------------------------------------------------------------------------------
+
+Enter 10 numbers from user and display the even numbers and also the count of even numbers
+
+Enter the number
+1
+Enter the number
+2
+The number of even number till now is 1
+Enter the number
+15
+Enter the number
+4
+The number of even number till now is 2
+Enter the number
+23
+Enter the number
+45
+Enter the number
+65
+Enter the number
+2
+The number of even number till now is 3
+Enter the number
+23
+Enter the number
+5
+The total number of even numbers are 3
+[continue]
+---------------------------------------------------------------------------------------------------------
+
+
+
