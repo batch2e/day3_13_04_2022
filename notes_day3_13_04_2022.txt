@@ -853,3 +853,130 @@ public class Main {
     }
  }
 ---------------------------------------------------------------------------------------------------------------
+Q I want to work with 3 books . So how I can do that?
+
+import java.util.Scanner;
+class BookDetails {
+    int bookId;
+    String title;
+    float price;
+
+ }
+
+
+public class Main {
+   public static void main(String str[]) {
+     BookDetails bk1=new BookDetails();
+     BookDetails bk2=new BookDetails();
+     BookDetails bk3=new BookDetails();
+     Scanner scan=new Scanner(System.in);
+
+     System.out.println("Enter the book id");
+     bk1.bookId=scan.nextInt();
+     System.out.println("Enter the title of the book");
+     bk1.title=scan.next();
+     System.out.println("Enter the price for the book");
+     bk1.price=scan.nextFloat();
+
+     System.out.println("Enter the book id");
+     bk2.bookId=scan.nextInt();
+     System.out.println("Enter the title of the book");
+     bk2.title=scan.next();
+     System.out.println("Enter the price for the book");
+     bk2.price=scan.nextFloat();
+
+     System.out.println("Enter the book id");
+     bk3.bookId=scan.nextInt();
+     System.out.println("Enter the title of the book");
+     bk3.title=scan.next();
+     System.out.println("Enter the price for the book");
+     bk3.price=scan.nextFloat();
+
+     System.out.println("The details for the book1");
+     System.out.println("ID "+bk1.bookId);
+     System.out.println("TITLE "+bk1.title);
+     System.out.println("PRICE "+bk1.price);
+
+     System.out.println("The details for the book2");
+     System.out.println("ID "+bk2.bookId);
+     System.out.println("TITLE "+bk2.title);
+     System.out.println("PRICE "+bk2.price);
+
+     System.out.println("The details for the book3");
+     System.out.println("ID "+bk3.bookId);
+     System.out.println("TITLE "+bk3.title);
+     System.out.println("PRICE "+bk3.price);
+    }
+    
+ }
+-----------------------------------------------------------------------------------------------------------
+class Employee {
+   private int id;
+   private String name;
+   private String desig;
+   private String dept;
+   private int basic;
+
+}
+
+public class EmployeeMain {
+   public static void main(String args[]){
+     Employee emp=new Employee();
+     emp.id=1;
+     emp.name="Ragini";
+     emp.desig="Programmer";
+     emp.dept="Banking";
+     emp.basic=34000;
+         
+  }
+ }
+// The above code will show compilation error as we are trying to access the private members of Employee
+class from EmployeeMain
+--------------------------------------------------------------------------------------------------
+So we are keeping the instance variables/attributes as private so that they are kept secured within the class
+Employee. How we are going to access this data.
+
+import java.util.Scanner;
+
+class Employee1 {
+   private int id;       // instance variable/attributes/properties
+   private String name;
+   private String desig;
+   private String dept;
+   private int basic;
+  
+   void setData(){  // member method/behaviour/action
+     Scanner scan=new Scanner(System.in);
+     System.out.println("Enter the id");
+     id=scan.nextInt();
+     System.out.println("Enter the name");
+     name=scan.next();
+     System.out.println("Enter the designation");
+     desig=scan.next();
+     System.out.println("Enter the department");
+     dept=scan.next();
+     System.out.println("Enter the basic");
+     basic=scan.nextInt();
+   }
+
+   void displayData(){
+    System.out.println(id);
+    System.out.println(name);
+    System.out.println(desig);
+    System.out.println(dept);
+    System.out.println(basic);   
+   }
+
+
+}
+
+public class EmployeeMain1 {
+   public static void main(String args[]){
+     Employee1 emp1=new Employee1();
+     Employee1 emp2=new Employee1();
+     emp1.setData();
+     emp2.setData();
+     emp1.displayData();
+     emp2.displayData();
+   }
+ }
