@@ -402,7 +402,7 @@ public class Customer4 {
 // According to the code above dont enter the details for the third iteration and also dont display the total cost
 ----------------------------------------------------------------------------------------------
 Accept 10 numbers from user if the user enters 0 the output shown will be the sum of numbers entered till 0
-
+Testcase 1
 Enter number 1
 1
 Enter number 2
@@ -425,6 +425,7 @@ Enter number 10
 10
 The sum is: 55
 ------------------------------
+Testcase2
 Enter number 1
 1
 Enter number 2
@@ -432,8 +433,27 @@ Enter number 2
 Enter number 3
 0
 The sum is: 33
--------------------------------
+
 [Hint is break]
+
+import java.util.Scanner;
+class Exercise1 {
+   public static void main(String args[]){
+      int num;
+      int sum=0;
+      Scanner scanner=new Scanner(System.in);
+      for(int ctr=1;ctr<=10;ctr++){
+    	 System.out.println("Enter number "+ctr);
+         num=scanner.nextInt();
+         if(num==0){
+               break;
+         } // end of if
+         sum+=num;
+       } // end of for loop
+      System.out.println("The sum is:"+sum);
+    }  //end of main method
+  } // end of class
+
 -------------------------------------------------------------------------------------------------------------
 
 Enter 10 numbers from user and display the even numbers and also the count of even numbers
@@ -462,8 +482,374 @@ Enter the number
 Enter the number
 5
 The total number of even numbers are 3
-[continue]
----------------------------------------------------------------------------------------------------------
+[Hint is continue]
 
 
+import java.util.Scanner;
+class Exercise2 {
+   public static void main(String args[]){
+      int num;
+      int countEven=0;
+      
+      Scanner scanner=new Scanner(System.in);
+      for(int ctr=1;ctr<=10;ctr++){
+    	 System.out.println("Enter the number");
+         num=scanner.nextInt();
+         if(num%2!=0){
+           continue;    
+         } // end of if
+         countEven++;
+         System.out.println("The number of even number till now is "+countEven);
+       } // end of for loop
+      System.out.println("The total number of even numbers are "+countEven);
+    }  //end of main method
+  } // end of class
 
+-------------------------------------------------------------------------------------------------------------
+Enter 5 numbers from user and find out the minimum number out of the entered 5 numbers.
+Testcase
+Enter the number
+1
+Enter the number
+22
+Enter the number
+100
+Enter the number 
+4
+Enter the number
+-2
+The minumum number is -2
+-----------------------------------------------------------------------------------------------------------
+Enter the roll number,name and marks in 3 subjects for a student. Find out the average of the subjects.
+Display the grade based on avg.
+if average is more than or equal to 80 grade is A
+id average is >=70 and <80 grade is B
+otherwise is C
+Testcase1
+Enter roll
+1
+Enter name
+Rajib
+Enter marks for subject 1
+80
+Enter marks for subject 2
+90
+Enter marks for subject 3
+70
+Average score is 80
+Grade is A
+Testcase2
+Enter roll
+2
+Enter name
+Suresh
+Enter marks for subject 1
+40
+Enter marks for subject 2
+50
+Enter marks for subject 3
+30
+Average score is 40
+Grade is C
+-----------------------------------------------------------------------------------------------------------
+Enter 5 names and count the names starting with A.
+Enter name 1
+Ashok
+Enter name 2
+Rajesh
+Enter name 3
+Suresh
+Enter name 4
+Ajay
+Enter name 5
+Zuben
+The number of names starting with A: 2
+[ Hint charAt ]
+---------------------------------------------------------------------------------------------------------------
+String name=scanner.next();   // Ashok
+char firstChar=name.charAt(0);
+if(firstChar=='A'){
+  count++;
+}
+---------------------------------------------------------------------------------------------------------------
+
+Store the roll number , name and marks of 3 students.
+
+import java.util.Scanner;
+class Student1 {
+   public static void main(String args[]){
+    int roll1;
+    int roll2;
+    int roll3;
+    String name1;
+    String name2;
+    String name3;
+    int marks1;
+    int marks2;
+    int marks3;
+    Scanner scan=new Scanner(System.in);    
+    System.out.println("Enter the roll number for student1");
+    roll1=scan.nextInt();
+    System.out.println("Enter the roll number for student2");
+    roll2=scan.nextInt();
+    System.out.println("Enter the roll number for student3");
+    roll3=scan.nextInt();
+    System.out.println("Enter the name for student1");
+    name1=scan.next();
+    System.out.println("Enter the name for student2");
+    name2=scan.next();
+    System.out.println("Enter the name for student3");
+    name3=scan.next();
+    System.out.println("Enter the marks for student1");
+    marks1=scan.nextInt();
+    System.out.println("Enter the marks for student2");
+    marks2=scan.nextInt();
+    System.out.println("Enter the marks for student3");
+    marks3=scan.nextInt();
+    System.out.println("The details of the student1");
+    System.out.println("roll:"+roll1);
+    System.out.println("name:"+name1);
+    System.out.println("marks:"+marks1);
+    System.out.println("The details of the student2");
+    System.out.println("roll:"+roll2);
+    System.out.println("name:"+name2);
+    System.out.println("marks:"+marks2);
+    System.out.println("The details of the student3");
+    System.out.println("roll:"+roll3);
+    System.out.println("name:"+name3);
+    System.out.println("marks:"+marks3);
+   }
+ }
+
+import java.util.Scanner;
+class Student2 {
+   public static void main(String args[]){
+    int roll1;
+    int roll2;
+    int roll3;
+    String name1;
+    String name2;
+    String name3;
+    int marks1;
+    int marks2;
+    int marks3;
+    Scanner scan=new Scanner(System.in);    
+    System.out.println("Enter the roll number for student1");
+    roll1=scan.nextInt();
+    System.out.println("Enter the name for student1");
+    name1=scan.next();
+    System.out.println("Enter the marks for student1");
+    marks1=scan.nextInt();
+    
+    System.out.println("Enter the roll number for student2");
+    roll2=scan.nextInt();
+    System.out.println("Enter the name for student2");
+    name2=scan.next();
+    System.out.println("Enter the marks for student2");
+    marks2=scan.nextInt();
+    
+    System.out.println("Enter the roll number for student3");
+    roll3=scan.nextInt();
+    System.out.println("Enter the name for student3");
+    name3=scan.next();
+    System.out.println("Enter the marks for student3");
+    marks3=scan.nextInt();
+    System.out.println("The details of the student1");
+    System.out.println("roll:"+roll1);
+    System.out.println("name:"+name1);
+    System.out.println("marks:"+marks1);
+    System.out.println("The details of the student2");
+    System.out.println("roll:"+roll2);
+    System.out.println("name:"+name2);
+    System.out.println("marks:"+marks2);
+    System.out.println("The details of the student3");
+    System.out.println("roll:"+roll3);
+    System.out.println("name:"+name3);
+    System.out.println("marks:"+marks3);
+   }
+ }
+
+import java.util.Scanner;
+class Student3 {
+   public static void main(String args[]){
+    int roll;
+    String name;
+    int marks;
+    Scanner scan=new Scanner(System.in); 
+  for(int i=0;i<3;i++){
+    System.out.println("Enter the roll number for student");
+    roll=scan.nextInt();
+    System.out.println("Enter the name for student");
+    name=scan.next();
+    System.out.println("Enter the marks for student");
+    marks=scan.nextInt();
+    System.out.println("The details of the student");
+    System.out.println("roll:"+roll);
+    System.out.println("name:"+name);
+    System.out.println("marks:"+marks);
+   }
+  }
+}
+
+import java.util.Scanner;
+class Student4 {
+   public static void main(String args[]){
+    int roll=0;
+    String name="";
+    int marks=0;
+    Scanner scan=new Scanner(System.in); 
+  for(int i=0;i<3;i++){
+    System.out.println("Enter the roll number for student");
+    roll=scan.nextInt();
+    System.out.println("Enter the name for student");
+    name=scan.next();
+    System.out.println("Enter the marks for student");
+    marks=scan.nextInt();
+   
+   }
+  for(int i=0;i<3;i++){
+    System.out.println("The details of the student");
+    System.out.println("roll:"+roll);
+    System.out.println("name:"+name);
+    System.out.println("marks:"+marks);
+   }   
+  }
+}
+----------------------------------------------------------------------------------------------------------
+We have two types of programming approach:
+1) Procedural approach  
+C programming is a procedural approach
+2) Object Oriented approach
+C++,Java,Python,C# Object Oriented approach
+
+In procedural approach we concentrate more on functionality and less on data.
+In object oriented program we concentrate on both data and functionality.
+
+----------------------------------------------------------------------------------------------------
+package com.infosys.classobject;
+
+public class Student {
+  int roll;
+  String name;
+  int marks;
+
+}
+
+public class StudentMain {
+	
+	public static void main(String args[])
+	{
+		
+	}
+	
+}
+// We cannot have multiple public classes in a single file. Because if two classes are public than we 
+// have a challenge with the file name. In the above example if we keep the file name as Student.java
+// It will show error for StudentMain and similarly if we make the filename as StudentMain.java, it
+// will show error for the Student class.
+
+--------------------------------------------------------------
+// The solution is make one class as public and another without the public keyword. The class which is 
+// public usually will contain the main method. In the below example we have two classes in the same
+// file StudentMain.java
+// The Student class is having attributes/properties like roll,name,marks
+// Can you tell me about Employee class. What are attributes related Employee class
+// Class is just like a blueprint or design. We cannot use class until unless we create an object of the 
+// class
+
+ class Employee{
+   String empId;
+   String name;
+   String designation;
+   String department;
+   int salary;
+ }
+--------------------------------------StudentMain.java----------------------------------------------------
+
+package com.infosys.classobject;
+
+class Student {
+  int roll;
+  String name;
+  int marks;
+
+}
+
+public class StudentMain {
+	
+	public static void main(String args[])
+	{
+		  Student stud=new Student();  
+     
+	}
+	
+}
+
+/* In the above code we can write as 
+
+   Student stud; // Which means we created a reference variable of Student class type named as stud
+   stud=new Student(); // new is a keyword which is used to create an object during the runtime.
+   // runtime means when the code is executed. The address of newly created object is stored in the reference
+   // variable stud
+   
+ Student stud=new Student();
+----------------------------------------------------------------------------------------------------
+
+package com.infosys.classobject;
+
+class Student {
+  int roll;
+  String name;
+  int marks;
+
+}
+
+public class StudentMain {
+	
+	public static void main(String args[])
+	{
+		Student stud=new Student();
+		System.out.println(stud.roll);  //0
+		System.out.println(stud.name);  // nul;
+		System.out.println(stud.marks); //0
+		stud.roll=1;
+		stud.name="Akash";
+		stud.marks=78;
+		System.out.println(stud.roll);  //1
+		System.out.println(stud.name);  // Akash
+		System.out.println(stud.marks); // 78
+				
+	}
+	
+}
+-------------------------------------------------------------------------------------------------------
+Whenever we are creating a class , we have to create an object of the class to access its member variables/
+properties/attributes/instance variables.
+So in the above example Student is a class and roll,name and marks are instance variables or attributes or properties or member variables.
+
+import java.util.Scanner;
+class Book {
+    int bookId;
+    String title;
+    float price;
+
+ }
+
+
+public class Main {
+   public static void main(String str[]) {
+     Book bk=new Book();
+     Scanner scan=new Scanner(System.in);
+     System.out.println("Enter the book id");
+     bk.bookId=scan.nextInt();
+     System.out.println("Enter the title of the book");
+     bk.title=scan.next();
+     System.out.println("Enter the price for the book");
+     bk.price=scan.nextFloat();
+     System.out.println("The details for the book");
+     System.out.println("ID "+bk.bookId);
+     System.out.println("TITLE "+bk.title);
+     System.out.println("PRICE "+bk.price);
+    }
+ }
+---------------------------------------------------------------------------------------------------------------
