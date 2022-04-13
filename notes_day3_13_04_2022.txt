@@ -980,3 +980,152 @@ public class EmployeeMain1 {
      emp2.displayData();
    }
  }
+---------------------------------------------------------------------------------------------------------------
+We have 4 access specifiers in Java:
+private: accessible within the same class only.
+default: when we dont mention the other access specifier like private,public or protected. The member is
+         with the default access specifer. The default members are accessible within the same class or 
+         another class in the same package.
+protected: protected members are accessible by the same class , derived classes ( same package or different package ) and also by the non derived class in the same package.
+public: public is accessible from everywhere. 
+In the above example we have used private(instance variables) and default(member methods) in the Employee1 class and we have used public for main method in the EmployeeMain1. 
+--------------------------------------------------------------------------------------------------------------
+Methods/functions/procedures====> They are basically designed to solve a particular problem. They are
+being identified with a name.
+1) method without a return type and parameter
+
+  class Hello {
+
+    void greet(){
+     System.out.println("Hello friends");
+    }
+  }
+
+ public class HelloMain{
+    public static void main(String args[]){
+    Hello he=new Hello();
+    he.greet();
+  }
+}
+-----------------------------------------------------------------------------------------------------------
+2) a method with parameter/parameters
+// nm is called as a parameter of type String which is pointing to the string "Ashutosh"
+// String nm="Ashutosh";
+  class Hello2 {
+   
+   void greet(String nm){
+     System.out.println("Hello "+nm);
+   }
+  }
+
+  public class HelloMain2 {
+   public static void main(String args[]) {
+    Hello2 he=new Hello2();
+    he.greet("Ashutosh");  // Ashustosh is an argument
+   }
+  }
+--------------------------------------------------------------------------------------------------------------
+3) a method returning a value but no parameter
+// returning the value to the caller method. In the below example greet is called method and main is the 
+// caller method
+   class Hello3 {
+
+     String greet(){
+       String str="Hello Friends";
+       return str;
+     }
+  }
+
+  public class HelloMain3 {
+    public static void main(String args[]) {
+     Hello3 he=new Hello3();
+     String message=he.greet();
+     System.out.println(message);
+   }
+ }
+------------------------------------------------------------------------------------------------------------
+4) Method returning a value and also receiving parameter or parameters
+
+  class Number {
+  
+   int add(int n1,int n2){
+    int result=n1+n2;
+    return result;
+   }
+ }
+
+ public class NumberMain {
+   public static void main(String args[]) {
+     Number num=new Number();
+     int res=num.add(1,2);
+     System.out.println(res);
+  }
+ }
+
+OR
+ public class NumberMain1 {
+   int add(int n1,int n2){
+    int result=n1+n2;
+    return result;
+   }
+
+   public static void main(String args[]) {
+     
+     int res=add(1,2);
+     System.out.println(res);
+  }
+ }
+
+// The above code will show compilation error as we are trying to call a non static method from a static
+//method
+ public class NumberMain2 {
+   static int add(int n1,int n2){
+    int result=n1+n2;
+    return result;
+   }
+
+   public static void main(String args[]) {
+     
+     int res=add(1,2);
+     System.out.println(res);
+  }
+ }
+
+ public class NumberMain3 {
+    int add(int n1,int n2){
+    int result=n1+n2;
+    return result;
+   }
+
+   public static void main(String args[]) {
+     NumberMain3 num=new NumberMain3();
+     int res=num.add(1,2);
+     System.out.println(res);
+  }
+ }
+
+
+----------------------------------------------------------------------------------------------------------
+public class Restaurant {
+
+    public static void main(String[] args) {
+        java.util.Scanner scan = new java.util.Scanner(System.in);
+        System.out.println("Will you like to order something? Enter Yes or No");
+        String item, str = scan.next();
+        int totalAmount=0, quan=0, cost=50, itemCost;
+        while(str.equals("Yes")){
+            System.out.println("What will you like to have today? ");
+            item = scan.next();
+            System.out.println("How much quantity will you like to have of" +item);
+            quan=scan.nextInt();
+            itemCost=quan*cost;
+            totalAmount=totalAmount+itemCost;
+            System.out.println("Will you like to have something else?");
+            str=scan.next();
+        }
+        System.out.println("Thank you ordering with us. Your order total is Rs."+totalAmount);
+
+    }
+
+}
+-----------------------------------------------------------------------------------------------------------------
